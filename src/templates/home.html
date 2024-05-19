@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+
+   <!-- Enlace a Bootstrap 5 desde el CDN de MaxCDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body id="index-page">
+    <header class="header">
+        <div class="barra">
+          <a class="logo" href="/home">
+            <h1 class="logo__nombre no-margin centrar-texto">MGSTORE</h1>
+          </a>
+          <nav class="navegacion">
+            <a class="navegacion__enlace" href="#">Inicio</a>
+            <a class="navegacion__enlace" href="#catalogo">Productos</a>
+            <a class="navegacion__enlace" href="#con">Acerca de</a>
+            {% if 'user_type' in session and session['user_type'] == 1 %}
+            <a class="navegacion__enlace" href="/admin" id="administrar">
+                Administrar
+            </a>
+        {% endif %}
+          </nav>
+          <p id="logout">Log out</p>
+         
+        </div>
+  
+       <img class="header" src="../static/img/banner.jpeg" alt="">
+      </header>
+  
+    <div class="container mt-5">
+        <h1 class="text-center">Catalogo</h1>
+        <div class="row" id="catalogo">
+            <!-- Las tarjetas de productos se generarán dinámicamente con JavaScript -->
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4 offset-md-8">
+                <h3>Resumen de Compra</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resumenCompra">
+                        <!-- Los detalles de la compra se generarán dinámicamente con JavaScript -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total:</td>
+                            <td></td>
+                            <td id="total"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="btn btn-dark" id="finalizarCompra">Finalizar Compra</button>
+                <button class="btn btn-dark" id="mostrarCalculadora">Mostrar Calculadora</button>
+
+
+            </div>
+        </div>
+        
+    </div>
+    <div class="calculadora-section" id="calculadoraSection" style="display: none;">
+        <h2>Calculadora</h2>
+        <iframe src="/calculadora" width="100%" height="400px" style="border: none;"></iframe>
+    </div>
+    
+    <footer class="footer">
+        <p class="p-footer">&copy; 2024 MGSTORE. Todos los derechos reservados.</p>    </footer>
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+
+</body>
+</html>

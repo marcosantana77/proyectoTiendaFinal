@@ -1,0 +1,182 @@
+:root {
+  --gris: #e1e1e1;
+  --blanco: #ffffff;
+  --negro: #000000;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px; /* 1rem = 10px */
+  font-family: "PT Sans", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--negro);
+}
+
+/*Utilidades*/
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.centrar-texto {
+  text-align: center;
+}
+
+.logo__nombre {
+  color: var(--negro);
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Barra */
+
+.barra p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.barra {
+  width: 100%;
+  background-color: var(--blanco);
+  padding: 1.5rem;
+}
+
+.barra a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .barra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 6rem;
+  }
+}
+
+.logo__nombre {
+  font-weight: normal;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .navegacion {
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+.navegacion__enlace {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--negro);
+}
+
+.icon {
+  width: 4rem;
+}
+
+#catalogo img {
+  width: 150px;
+  height: 150px;
+  margin: 1rem auto;
+}
+
+#resumenCompra {
+  margin-top: 50rem;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+}
+
+#finalizarCompra {
+width: 50%;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+button.btn-add {
+  padding: 0.7rem;
+}
+
+#finalizarCompra, #mostrarCalculadora{
+  padding: 0.7rem;
+  margin-top: 20px;
+}
+
+.footer{
+  margin-top: 2rem;
+  padding: 3rem;
+  background-color: var(--negro);
+  width: 100%;
+}
+
+.p-footer{
+  text-align: center;
+  color: var(--blanco);
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.2rem;
+  margin: 0 auto;
+
+}
